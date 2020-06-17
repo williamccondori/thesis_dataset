@@ -19,10 +19,10 @@ def convert(size, box):
     return (x, y, w, h)
 
 
-csv_file_path = './annotations.csv'
+csv_file_path = '/home/william/Downloads/airbus-ship-detection/train_ship_segmentations_v2.csv'
 
-image_folder_path = './images'
-output_folder = './datasets/yolo/airbus'
+image_folder_path = '/home/william/Downloads/airbus-ship-detection/train_v2'
+output_folder = '/home/william/Datasets/Airbus'
 
 ############ READ CSV ############
 
@@ -39,10 +39,9 @@ csv_file.close()
 if os.path.exists(output_folder):
     shutil.rmtree(output_folder, ignore_errors=True)
 os.makedirs(output_folder)
-output_folder_img = f'{output_folder}/images'
-output_folder_ann = f'{output_folder}/annotations'
+output_folder_img = f'{output_folder}/Images'
+output_folder_ann = f'{output_folder}/Images'
 os.makedirs(output_folder_img)
-os.makedirs(output_folder_ann)
 
 for image_file_name in os.listdir(image_folder_path):
     image_path = f'{image_folder_path}/{image_file_name}'
